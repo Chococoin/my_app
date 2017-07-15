@@ -12,7 +12,7 @@ class Index(Resource):
         k = krakenex.API()
         k.load_key('kraken.key')
         balance = k.query_private('Balance')
-        header = {'Balance': balance}
+        header = {'Balance_EUR': balance['result']['ZEUR']}
         return header
 
 class Kraken_api(Resource):
